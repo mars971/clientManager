@@ -1,6 +1,6 @@
 package managerartifactid;
 
-import entity.User;
+import entity.User; 
 
 public class Main {
 
