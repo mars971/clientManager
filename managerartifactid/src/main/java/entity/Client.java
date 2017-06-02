@@ -1,6 +1,6 @@
 package entity;
 
-public class User { 
+public class Client { 
 	private Integer id;
 	private String name;
 	private String firstname;
@@ -16,6 +16,12 @@ public class User {
 	}
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 }
