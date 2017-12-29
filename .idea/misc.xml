@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/daoManager/pom.xml" />
         <option value="$PROJECT_DIR$/serviceManager/pom.xml" />
         <option value="$PROJECT_DIR$/entityManager/pom.xml" />
+        <option value="$PROJECT_DIR$/WebManager/pom.xml" />
+        <option value="$PROJECT_DIR$/testa/pom.xml" />
       </list>
     </option>
   </component>
