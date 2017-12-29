@@ -1,0 +1,10 @@
+package daoManager;
+
+public class PersonnDAO {
+
+    public Personn getPersonneById(Integer personId){
+
+    }
+
+
+}

@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_PERSON", allocationSize=1)
 @Table(name="PERSON")
@@ -19,8 +21,8 @@ public class Person {
     @Column(name="AGE")
     private String age;
 
-    @Column(name="OBSERVATION")
-    private Observation observation;
+    @OneToMany(mappedBy="observations")
+    private List<Observation> observationList;
 
     @Column(name="DATE_BIRTH")
     private Date dateOfBirth;
@@ -43,6 +45,6 @@ public class Person {
     @Column(name="AVATAR")
     private Object avatar;
 
-    @Column(name="ADRESS")
-    private Adress adress;
+    @OneToMany(mappedBy="adresses")
+    private List<Adress> adressList;
 }
