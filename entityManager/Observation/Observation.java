@@ -1,6 +1,16 @@
-package entity;
+package Observation;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_OBSERVATION", allocationSize=1)
@@ -17,6 +27,9 @@ public class Observation implements Serializable {
 
     @Column(name="MESSAGE")
     private String message;
+
+    @Column(name="AUTHOR")
+    private Personn author;
 
     public Integer getId() {
         return id;
@@ -41,4 +54,13 @@ public class Observation implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public Personn getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Personn author) {
+        this.author = author;
+    }
+
 }

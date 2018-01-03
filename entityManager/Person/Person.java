@@ -1,11 +1,12 @@
-package entity;
+package Person;
 
-import java.util.List;
+import java.io.Serializable;
+
 
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_PERSON", allocationSize=1)
 @Table(name="PERSON")
-public class Person {
+public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID")
