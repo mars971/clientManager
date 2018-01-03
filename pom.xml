@@ -36,4 +36,11 @@
         </dependency>
     </dependencies>
 
+    <developers>
+        <developer>
+            <name>Maxence TISSOT</name>
+            <email>maxence.tissot@mars.com</email>
+        </developer>
+    </developers>
+
 </project>

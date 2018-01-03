@@ -1,16 +1,10 @@
 package Observation;
 
-import java.io.Serializable;
-import java.util.Date;
+import Person.Person;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.sql.Date;
 
 
 @Entity
@@ -30,7 +24,7 @@ public class Observation implements Serializable {
     private String message;
 
     @Column(name="AUTHOR")
-    private Personn author;
+    private Person author;
 
     public Integer getId() {
         return id;
@@ -56,11 +50,11 @@ public class Observation implements Serializable {
         this.message = message;
     }
 
-    public Personn getAuthor() {
+    public Person getAuthor() {
         return author;
     }
 
-    public void setAuthor(Personn author) {
+    public void setAuthor(Person author) {
         this.author = author;
     }
 

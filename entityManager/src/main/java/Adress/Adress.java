@@ -1,5 +1,6 @@
 package Adress;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -8,7 +9,7 @@ import java.io.Serializable;
 public class Adress implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID")
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="SEQ_ID")
     @Column(name="ADRESS_ID")
     private Integer id;
 
@@ -18,8 +19,8 @@ public class Adress implements Serializable {
     @Column(name="VILLE")
     private String ville;
 
-    @Column(name="DEPARTEMENT")
-    private String Departement;
+    @Column(name="DEPARTMENT")
+    private String department;
 
     @Column(name="REGION")
     private String region;
@@ -57,12 +58,12 @@ public class Adress implements Serializable {
         this.ville = ville;
     }
 
-    public String getDepartement() {
-        return Departement;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setDepartement(String departement) {
-        Departement = departement;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getRegion() {

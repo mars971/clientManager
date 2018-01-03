@@ -80,6 +80,16 @@
             <artifactId>persistence-api</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>entityManager</groupId>
+            <artifactId>entityManager</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>entityManager</groupId>
+            <artifactId>entityManager</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 

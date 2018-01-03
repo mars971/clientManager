@@ -1,22 +1,17 @@
 package Customer;
 
+import Adress.Adress;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_CUSTOMER", allocationSize=1)
 @Table(name="CUSTOMER")
 public class Customer implements Serializable {
 
-    @Id
+    @EmbeddedId
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID")
     @Column(name="CUSTOMER_ID")
     private Integer id;
@@ -25,28 +20,28 @@ public class Customer implements Serializable {
     private String statut;
 
     @Column(name="ADRESS")
-    private Adresse adress;
+    private Adress adress;
 
     @Column(name="SOCIAL_REASON")
     private String socialReason;
 
     @Column(name="DATE_CREATION")
-    private Date dateCreation
+    private Date dateCreation;
 
     @Column(name="SIRET")
-    private String SIRET;
+    private String siret;
 
     @Column(name="SIREN")
-    private String SIREN;
+    private String siren;
 
     @Column(name="APE")
-    private String APE;
+    private String ape;
 
     @Column(name="SUMMARY")
     private String summary;
 
     @Column(name="NAF")
-    private String NAF
+    private String naf;
 
     public Integer getId() {
         return id;
@@ -64,11 +59,11 @@ public class Customer implements Serializable {
         this.statut = statut;
     }
 
-    public Adresse getAdress() {
+    public Adress getAdress() {
         return adress;
     }
 
-    public void setAdress(Adresse adress) {
+    public void setAdress(Adress adress) {
         this.adress = adress;
     }
 
@@ -88,28 +83,28 @@ public class Customer implements Serializable {
         this.dateCreation = dateCreation;
     }
 
-    public String getSIRET() {
-        return SIRET;
+    public String getSiret() {
+        return siret;
     }
 
-    public void setSIRET(String SIRET) {
-        this.SIRET = SIRET;
+    public void setSiret(String siret) {
+        this.siret = siret;
     }
 
-    public String getSIREN() {
-        return SIREN;
+    public String getSiren() {
+        return siren;
     }
 
-    public void setSIREN(String SIREN) {
-        this.SIREN = SIREN;
+    public void setSiren(String siren) {
+        this.siren = siren;
     }
 
-    public String getAPE() {
-        return APE;
+    public String getApe() {
+        return ape;
     }
 
-    public void setAPE(String APE) {
-        this.APE = APE;
+    public void setApe(String ape) {
+        this.ape = ape;
     }
 
     public String getSummary() {
@@ -120,11 +115,11 @@ public class Customer implements Serializable {
         this.summary = summary;
     }
 
-    public String getNAF() {
-        return NAF;
+    public String getNaf() {
+        return naf;
     }
 
-    public void setNAF(String NAF) {
-        this.NAF = NAF;
+    public void setNaf(String naf) {
+        this.naf = naf;
     }
 }
