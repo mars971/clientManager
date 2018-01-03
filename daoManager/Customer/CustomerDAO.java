@@ -1,12 +1,16 @@
 package Customer;
 
-import
+import java.io.Serializable;
 
-public class CustomerDAO impl {
+public class CustomerDAO implements Serializable {
 
-    private Customer2 test()2{}
-
-    public CustomerDAO test(){
-
+/*
+    public Customer2 getCustomerById(Integer idCustomer){
+        Customer2 customer = new Customer2();
+        return customer;
     }
+*/
+
+
+
 }
