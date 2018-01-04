@@ -56,6 +56,12 @@
             <version>2.2.0.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
         <dependency>
             <groupId>javax.persistence</groupId>
@@ -94,6 +100,16 @@
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>entityManager</groupId>
+            <artifactId>entityManager</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>entityManager</groupId>
+            <artifactId>entityManager</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
