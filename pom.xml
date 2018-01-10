@@ -12,10 +12,10 @@
     <description>Projet Client Manager for ESN</description>
 
     <modules>
-        <module>daoManager</module>
         <module>entityManager</module>
-        <module>serviceManager</module>
         <module>WebManager</module>
+        <module>dao</module>
+        <module>service</module>
     </modules>
 
     <properties>

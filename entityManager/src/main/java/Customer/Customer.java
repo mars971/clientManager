@@ -1,7 +1,5 @@
 package Customer;
 
-import Adress.Adress;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
@@ -19,8 +17,10 @@ public class Customer implements Serializable {
     @Column(name="STATUT")
     private String statut;
 
+/*
     @Column(name="ADRESS")
-    private Adress adress;
+    private Address.Address adressEntity;
+*/
 
     @Column(name="SOCIAL_REASON")
     private String socialReason;
@@ -59,13 +59,17 @@ public class Customer implements Serializable {
         this.statut = statut;
     }
 
-    public Adress getAdress() {
-        return adress;
+/*
+    public Address.Address getAdressEntity() {
+        return adressEntity;
     }
+*/
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+/*
+    public void setAdressEntity(Address.Address adressEntity) {
+        this.adressEntity = adressEntity;
     }
+*/
 
     public String getSocialReason() {
         return socialReason;

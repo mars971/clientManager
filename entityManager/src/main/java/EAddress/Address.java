@@ -1,4 +1,4 @@
-package Adress;
+package EAddress;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -6,7 +6,7 @@ import java.io.Serializable;
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_ADRESS", allocationSize=1)
 @Table(name="ADRESS")
-public class Adress implements Serializable {
+public class Address implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="SEQ_ID")

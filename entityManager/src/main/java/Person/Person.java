@@ -1,6 +1,5 @@
 package Person;
 
-import Adress.Adress;
 import Observation.Observation;
 
 import javax.persistence.*;
@@ -52,8 +51,10 @@ public class Person implements Serializable {
     @Column(name="AVATAR")
     private Object avatar;
 
+/*
     @OneToMany(mappedBy="adresses")
-    private List<Adress> adressList;
+    private List<Address.Address> adressEntityList;
+*/
 
     public Person() {
         super();
