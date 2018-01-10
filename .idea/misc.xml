@@ -4,13 +4,16 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/entityManager/pom.xml" />
-        <option value="$PROJECT_DIR$/WebManager/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/WebManager/pom.xml" />
         <option value="$PROJECT_DIR$/dao/entityManager/pom.xml" />
+        <option value="$PROJECT_DIR$/web/pom.xml" />
+        <option value="$PROJECT_DIR$/web2/pom.xml" />
+        <option value="$PROJECT_DIR$/web3webapp/pom.xml" />
       </set>
     </option>
   </component>

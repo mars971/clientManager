@@ -13,9 +13,10 @@
 
     <modules>
         <module>entityManager</module>
-        <module>WebManager</module>
         <module>dao</module>
         <module>service</module>
+        <module>web</module>
+        <module>tools</module>
     </modules>
 
     <properties>
