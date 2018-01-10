@@ -2,12 +2,15 @@ package Customer;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_CUSTOMER", allocationSize=1)
 @Table(name="CUSTOMER")
 public class Customer implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @EmbeddedId
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID")

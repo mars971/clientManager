@@ -13,6 +13,8 @@ import java.util.List;
 @Table(name="PERSON")
 public class Person implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID")
     @Column(name="PERSON_ID")

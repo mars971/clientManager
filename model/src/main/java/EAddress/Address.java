@@ -2,11 +2,15 @@ package EAddress;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_ADRESS", allocationSize=1)
 @Table(name="ADRESS")
 public class Address implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="SEQ_ID")

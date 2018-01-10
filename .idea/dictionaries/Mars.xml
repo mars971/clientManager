@@ -2,6 +2,7 @@
   <dictionary name="Mars">
     <words>
       <w>adresses</w>
+      <w>firstname</w>
     </words>
   </dictionary>
 </component>

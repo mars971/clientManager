@@ -4,13 +4,16 @@ import Person.Person;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_OBSERVATION", allocationSize=1)
 @Table(name="OBSERVATION")
 public class Observation implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID")

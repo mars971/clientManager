@@ -20,8 +20,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>entityManager</groupId>
-            <artifactId>entityManager</artifactId>
+            <groupId>com.mars.manager</groupId>
+            <artifactId>model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
