@@ -1,9 +1,8 @@
-package Customer;
+package ECustomer;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_CUSTOMER", allocationSize=1)

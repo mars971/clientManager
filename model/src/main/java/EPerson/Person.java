@@ -1,4 +1,4 @@
-package Person;
+package EPerson;
 
 import Observation.Observation;
 

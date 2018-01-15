@@ -1,7 +1,7 @@
-package Personn;
+package EPersonn;
 
 
-import Person.Person;
+import EPerson.Person;
 
 import java.util.ArrayList;
 import java.util.List;
