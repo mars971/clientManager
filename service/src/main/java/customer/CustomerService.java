@@ -1,16 +1,17 @@
-package ECustomer;
+package customer;
 
+import ECustomer.Customer;
 import org.hibernate.Criteria;
 
 import java.util.Date;
 import java.util.List;
 
-public interface CustomerDAO {
+public interface CustomerService {
     public Customer findByCriterion(Criteria criterion);
 
     public Customer findByCriteria(Criteria criteria);
 
-    public List<Customer> findAdressesByCriterion(Criteria criterion);
+    public List<Customer> findAdressesByCriterion(Criteria criteria);
 
     public List<Customer> findAdressesByCriteria(Criteria criteria);
 

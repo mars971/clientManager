@@ -8,7 +8,7 @@ import org.hibernate.Criteria;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddressDAO {
+public class AddressDAOImpl {
 
     public Address findByCriterion(Criteria criterion){
         Address address = new Address();
@@ -60,7 +60,7 @@ public class AddressDAO {
         return addresses;
     }
 
-    public List<Address> findbyVille(String ville){
+    public List<Address> findByVille(String ville){
         List<Address>addresses = new ArrayList<Address>();
         addresses.add(findById(1));
 

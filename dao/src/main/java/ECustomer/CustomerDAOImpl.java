@@ -26,14 +26,14 @@ public class CustomerDAOImpl implements Serializable, CustomerDAO {
     }
 
     @Override
-    public List<Customer> findAdressesByCriterion(Criteria criteria){
+    public List<Customer> findAdressesByCriterion(Criteria criterion){
         List<Customer>customers = new ArrayList<Customer>();
 
         Customer customer1 = new Customer();
-        customer1.setSiret(criteria.toString() );
+        customer1.setSiret(criterion.toString() );
 
         Customer customer2 = new Customer();
-        customer2.setSiret(criteria.toString() );
+        customer2.setSiret(criterion.toString() );
 
         customers.add(customer1);
         customers.add(customer2);

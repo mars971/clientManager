@@ -1,29 +1,36 @@
 package personn;
 
-import EAddress.Address;
-import EPersonn.PersonnDAOImpl;
+import EPerson.Personn;
 import org.hibernate.Criteria;
 
+import java.util.Date;
 import java.util.List;
 
-public class PersonnService {
-    private PersonnDAOImpl personnDAO;
+public interface PersonnService {
 
-    public EAddress.Address getAddressByCriterion(Criteria criterion){
-        return personnDAO.findByCriterion(criterion);
-    }
+    Personn findByCriterion(Criteria criterion);
 
-    public EAddress.Address getAddressByCriteria(Criteria criteria){
-        return personnDAO.findByCriteria(criteria);
-    }
+    Personn findByCriteria(Criteria criteria);
 
-    public List<Address> getAddressesByCriterion(Criteria Criterion){
-        return personnDAO.findAdressesByCriterion(Criterion);
-    }
+    List<Personn> findPersonnesByCriterion(Criteria criteria);
 
-    public List<EAddress.Address> getAddressesByCriteria(Criteria criteria){
-        return personnDAO.findAdressesByCriteria(criteria);
-    }
+    List<Personn> findPersonnesByCriteria(Criteria criteria);
 
+    void create(Personn personn) throws Exception.ExceptionDAO;
+
+    Personn find() throws Exception.ExceptionDAO;
+
+    Personn findById(Integer idCustomer);
+    List<Personn> findByName(String name);
+    List<Personn> findByFirstName(String firstName);
+    List<Personn> findByAge(Date age);
+    List<Personn> findByDateOfBirth(Date dateOfBirth);
+    List<Personn> findByDateHiring(Date dateHiring);
+    Personn findByEmail(String email);
+    List<Personn> findByPseudo(String pseudo);
+    List<Personn> findByAvatar(String avatar);
+
+
+    List<Personn> findAll();
 
 }

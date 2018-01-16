@@ -1,14 +1,14 @@
-package address;
+package EAdress;
 
 import EAddress.Address;
 import ECustomer.Customer;
 import EPerson.Personn;
 import org.hibernate.Criteria;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public interface AddressService {
-
+public interface AdressDAO {
     public Address findByCriterion(Criteria criterion);
 
     public Address findByCriteria(Criteria criteria);
