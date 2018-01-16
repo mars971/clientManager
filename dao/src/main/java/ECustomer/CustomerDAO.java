@@ -1,84 +1,35 @@
 package ECustomer;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import org.hibernate.Criteria;
+
 import java.util.Date;
 import java.util.List;
 
-public class CustomerDAO implements Serializable {
+public interface CustomerDAO {
+    public Customer findByCriterion(Criteria criterion);
 
-    public Customer findById(Integer idCustomer){
-        Customer customer = new Customer();
+    public Customer findByCriteria(Criteria criteria);
 
-        Date dateCreation = new Date();
+    public List<Customer> findAdressesByCriterion(Criteria criteria);
 
-        customer.setId(idCustomer);
-        customer.setSocialReason(idCustomer+"a");
-        customer.setDateCreation(dateCreation);
-        customer.setSiret(idCustomer+"aa");
-        customer.setSiren(idCustomer+"aaa");
-        customer.setApe(idCustomer+"aaaa");
-        customer.setSummary(idCustomer+"aaaaa");
-        customer.setNaf(idCustomer+"aaaaa");
+    public List<Customer> findAdressesByCriteria(Criteria criteria);
 
-        return customer;
-    }
+    public Customer findById(Integer idCustomer);
 
+    public List<Customer> findBySocialReason(String socialRaison);
 
-    public List<Customer> findBySocialReason(String socialRaison){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
+    public List<Customer> findByDateCreation(Date dateCreation);
 
-        return customers;
-    }
+    public List<Customer> findBySiret(String siret);
 
-    public List<Customer> findByDateCreation(Date dateCreation){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
+    public List<Customer> findBySiren(String siren);
 
-        return customers;
-    }
-    public List<Customer> findBySiret(String siret){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
+    public List<Customer> findByApe(String ape);
 
-        return customers;
-    }
-    public List<Customer> findBySiren(String siren){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
+    public List<Customer> findBySummary(String summary);
 
-        return customers;
-    }
-    public List<Customer> findByApe(String ape){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
+    public List<Customer> findByNaf(String naf);
 
-        return customers;
-    }
-    public List<Customer> findBySummary(String summary){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
-
-        return customers;
-    }
-
-    public List<Customer> findByNaf(String naf){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
-
-        return customers;
-    }
-
-    public List<Customer> findAll(){
-        List<Customer>customers = new ArrayList<Customer>();
-        customers.add(findById(1));
-        customers.add(findById(2));
-        customers.add(findById(3));
-        customers.add(findById(4));
-
-        return customers;
-    }
-
+    public List<Customer> findAll();
 
 }

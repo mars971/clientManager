@@ -2,13 +2,13 @@ package EAdress;
 
 import EAddress.Address;
 import ECustomer.Customer;
-import EPerson.Person;
+import EPerson.Personn;
 import org.hibernate.Criteria;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdressDAO {
+public class AddressDAO {
 
     public Address findByCriterion(Criteria criterion){
         Address address = new Address();
@@ -115,7 +115,7 @@ public class AdressDAO {
         return addresses;
     }
 
-    public List<Address> findByPersonn(Person personn){
+    public List<Address> findByPersonn(Personn personn){
         Address addressHome = new Address();
         Address addressWork = new Address();
 

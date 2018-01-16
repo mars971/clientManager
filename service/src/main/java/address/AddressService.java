@@ -1,67 +1,66 @@
 package address;
 
-import EAdress.AdressDAO;
+import EAdress.AddressDAO;
 import ECustomer.Customer;
-import EPerson.Person;
+import EPerson.Personn;
 import org.hibernate.Criteria;
 
 import java.util.List;
 
 public class AddressService {
 
-    private AdressDAO adressDAO;
+    private AddressDAO addressDAO;
 
     public EAddress.Address getAddressByCriterion(Criteria criterion){
-        return adressDAO.findByCriterion(criterion);
+        return addressDAO.findByCriterion(criterion);
     }
 
     public EAddress.Address getAddressByCriteria(Criteria criteria){
-        return adressDAO.findByCriteria(criteria);
+        return addressDAO.findByCriteria(criteria);
     }
 
-
     public List<EAddress.Address> getAddressesByCriterion(Criteria Criterion){
-        return adressDAO.findAdressesByCriterion(Criterion);
+        return addressDAO.findAdressesByCriterion(Criterion);
     }
 
     public List<EAddress.Address> getAddressesByCriteria(Criteria criteria){
-        return adressDAO.findAdressesByCriteria(criteria);
+        return addressDAO.findAdressesByCriteria(criteria);
     }
 
     public EAddress.Address getAddressById(Integer idAddress){
-        return adressDAO.findById(idAddress);
+        return addressDAO.findById(idAddress);
     }
     public List<EAddress.Address> getAddressByCP(String cp){
-        return adressDAO.findByCP(cp);
+        return addressDAO.findByCP(cp);
     }
     public List<EAddress.Address> getAddressByVille(String ville){
-        return adressDAO.findbyVille(ville);
+        return addressDAO.findbyVille(ville);
     }
 
     public List<EAddress.Address> getAddressByDepartment(String department){
-        return adressDAO.findByDepartement(department);
+        return addressDAO.findByDepartement(department);
     }
 
     public List<EAddress.Address> getAddressByRegion(String region){
-        return adressDAO.findByRegion(region);
+        return addressDAO.findByRegion(region);
     }
 
-    public List<EAddress.Address> getAddressByRoute(String route){ return adressDAO.findByRoute(route); }
+    public List<EAddress.Address> getAddressByRoute(String route){ return addressDAO.findByRoute(route); }
     public List<EAddress.Address> getAddressByImmeuble(String immeuble){
-        return adressDAO.findByImmeuble(immeuble);
+        return addressDAO.findByImmeuble(immeuble);
     }
-    public List<EAddress.Address> getAddressByVoie(String voie){      return adressDAO.findByVoie(voie);}
+    public List<EAddress.Address> getAddressByVoie(String voie){      return addressDAO.findByVoie(voie);}
 
-    public List<EAddress.Address> getAddressByPersonn(Person person){
-        return adressDAO.findByPersonn(person);
+    public List<EAddress.Address> getAddressByPersonn(Personn personn){
+        return addressDAO.findByPersonn(personn);
     }
 
     public List<EAddress.Address> getAddressByCustomer(Customer customer){
-        return adressDAO.findByCustomer(customer);
+        return addressDAO.findByCustomer(customer);
     }
 
     public List<EAddress.Address> getAddresses(){
-        return adressDAO.findAll();
+        return addressDAO.findAll();
     }
 
 

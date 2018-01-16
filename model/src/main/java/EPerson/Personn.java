@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @SequenceGenerator(name="SEQ_ID", sequenceName="S_PERSON", allocationSize=1)
 @Table(name="PERSON")
-public class Person implements Serializable {
+public class Personn implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -58,7 +58,7 @@ public class Person implements Serializable {
     private List<Address.Address> adressEntityList;
 */
 
-    public Person() {
+    public Personn() {
         super();
     }
 

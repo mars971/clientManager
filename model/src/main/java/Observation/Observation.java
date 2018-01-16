@@ -1,6 +1,6 @@
 package Observation;
 
-import EPerson.Person;
+import EPerson.Personn;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,7 +26,7 @@ public class Observation implements Serializable {
     private String message;
 
     @Column(name="AUTHOR")
-    private Person author;
+    private Personn author;
 
     public Integer getId() {
         return id;
@@ -52,11 +52,11 @@ public class Observation implements Serializable {
         this.message = message;
     }
 
-    public Person getAuthor() {
+    public Personn getAuthor() {
         return author;
     }
 
-    public void setAuthor(Person author) {
+    public void setAuthor(Personn author) {
         this.author = author;
     }
 
