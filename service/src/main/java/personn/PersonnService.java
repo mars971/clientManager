@@ -2,7 +2,7 @@ package personn;
 
 import EPerson.Personn;
 import org.hibernate.Criteria;
-
+import Exception.ExceptionDAO;
 import java.util.Date;
 import java.util.List;
 
@@ -16,9 +16,9 @@ public interface PersonnService {
 
     List<Personn> findPersonnesByCriteria(Criteria criteria);
 
-    void create(Personn personn) throws Exception.ExceptionDAO;
+    void create(Personn personn) throws ExceptionDAO;
 
-    Personn find() throws Exception.ExceptionDAO;
+    Personn find() throws ExceptionDAO;
 
     Personn findById(Integer idCustomer);
     List<Personn> findByName(String name);
