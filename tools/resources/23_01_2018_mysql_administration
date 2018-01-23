@@ -1,0 +1,9 @@
+demarrage serveur mysql :
+    sudo service mysql start
+
+se connecter au serveur mysql :
+mysql -u root -p ensuite saisir le mot de passe : root
+
+administration de la base de donnée :
+http://localhost/phpmyadmin/
+login : root, mdp : root

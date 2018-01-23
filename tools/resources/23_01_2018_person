@@ -1,0 +1,64 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.6deb5
+-- https://www.phpmyadmin.net/
+--
+-- Client :  localhost:3306
+-- Généré le :  Mar 23 Janvier 2018 à 09:14
+-- Version du serveur :  5.7.21-0ubuntu0.17.10.1
+-- Version de PHP :  7.1.11-0ubuntu0.17.10.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `cra_manager`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `PERSON`
+--
+
+CREATE TABLE `PERSON` (
+  `PERSON_ID` int(11) NOT NULL,
+  `NAME` varchar(255) NOT NULL,
+  `FIRSTNAME` varchar(255) NOT NULL,
+  `AGE` varchar(4) NOT NULL,
+  `DATE_BIRTH` date NOT NULL,
+  `DATE_HIRING` date NOT NULL,
+  `LOGIN` varchar(255) NOT NULL,
+  `PASSWORD` varchar(255) NOT NULL,
+  `EMAIL` varchar(255) NOT NULL,
+  `PSEUDO` varchar(255) NOT NULL,
+  `AVATAR` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `PERSON`
+--
+ALTER TABLE `PERSON`
+  ADD PRIMARY KEY (`PERSON_ID`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `PERSON`
+--
+ALTER TABLE `PERSON`
+  MODIFY `PERSON_ID` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
