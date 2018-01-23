@@ -1,40 +1,40 @@
 package Commons;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 
 public abstract class GenericDAOImpl<T, PK extends Serializable> implements GenericDAO<T, PK> {
 
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
+    protected Class<T> entityClass;
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+    @PersistenceContext
+    protected EntityManager entityManager;
 
-    @Autowired
-    private SessionFactory sessionFactory;
+    public GenericDAOImpl() {
+        ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
+        this.entityClass = (Class<T>) genericSuperclass.getActualTypeArguments()[0];
+    }
 
     @Override
     public T create(T t) {
-        return (T) this.getSessionFactory().getCurrentSession().save(t);
+        this.entityManager.persist(t);
+        return t;
     }
 
     @Override
     public T read(PK id) {
-        return null;
+        return this.entityManager.find(entityClass, id);
     }
 
     @Override
-    public void update(T t) {
-        this.getSessionFactory().getCurrentSession().saveOrUpdate(t);
+    public T update(T t) {
+        return this.entityManager.merge(t);
     }
 
     @Override
     public void delete(T t) {
-        this.getSessionFactory().getCurrentSession().delete(t);
+        this.entityManager.remove(t);
     }
 }

@@ -1,5 +1,6 @@
 package EPersonn;
 
+import Commons.GenericDAO;
 import EPerson.Personn;
 import Exception.ExceptionDAO;
 import org.hibernate.Criteria;
@@ -7,7 +8,7 @@ import org.hibernate.Criteria;
 import java.util.Date;
 import java.util.List;
 
-public interface PersonnDAO {
+public interface PersonnDAO extends GenericDAO<Personn> {
 
     Personn findByCriterion(Criteria criterion);
 
