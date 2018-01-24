@@ -1,10 +1,12 @@
 package Commons;
 
-import java.io.Serializable;
+import java.util.List;
 
-public interface GenericDAO<T, PK extends Serializable> {
-    T create(T t);
-    T read(PK id);
-    void update(T t);
-    void delete(T t);
+public interface GenericDAO<T> {
+    boolean create(T t);
+    boolean findById(int id);
+    boolean update(T t);
+    boolean delete(T t);
+    List<T> findAll();
+
 }

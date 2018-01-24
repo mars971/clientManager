@@ -2,9 +2,44 @@ package Commons;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.io.Serializable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-public abstract class GenericDAOImpl<T, PK extends Serializable> implements GenericDAO<T, PK> {
+public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
+    public Class<T> getEntityClass() {
+        return entityClass;
+    }
+
+    @Override
+    public boolean findById(int id) {
+        return false;
+    }
+
+    @Override
+    public List<T> findAll() {
+        return null;
+    }
+
+    public void setEntityClass(Class<T> entityClass) {
+        this.entityClass = entityClass;
+    }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public Set<T> getObjects() {
+        return objects;
+    }
+
+    public void setObjects(Set<T> objects) {
+        this.objects = objects;
+    }
 
     protected Class<T> entityClass;
 
@@ -15,20 +50,23 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
         this.entityClass = entityClass;
     }
 
-    @Override
-    public T create(T t) {
-        this.entityManager.persist(t);
+    private Set<T> objects = new HashSet<T>();
 
-        return t;
+    @Override
+    public boolean create(T t) {
+        this.entityManager.persist(t);
+        objects.add(t);
+
+        return objects.contains(t);
     }
 
     @Override
-    public T read(PK id) {
+    public T read(int id) {
         return this.entityManager.find(entityClass, id);
     }
 
     @Override
-    public void update(T t) {
+    public boolean update(T t) {
         this.entityManager.merge(t);
     }
 
