@@ -3,7 +3,6 @@ package Commons;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
 
 public abstract class GenericDAOImpl<T, PK extends Serializable> implements GenericDAO<T, PK> {
 
@@ -12,14 +11,14 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
     @PersistenceContext
     protected EntityManager entityManager;
 
-    public GenericDAOImpl() {
-        ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
-        this.entityClass = (Class<T>) genericSuperclass.getActualTypeArguments()[0];
+    public GenericDAOImpl(Class<T>entityClass) {
+        this.entityClass = entityClass;
     }
 
     @Override
     public T create(T t) {
         this.entityManager.persist(t);
+
         return t;
     }
 
@@ -29,8 +28,8 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
     }
 
     @Override
-    public T update(T t) {
-        return this.entityManager.merge(t);
+    public void update(T t) {
+        this.entityManager.merge(t);
     }
 
     @Override

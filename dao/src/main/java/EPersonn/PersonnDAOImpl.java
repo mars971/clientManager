@@ -18,6 +18,26 @@ public class PersonnDAOImpl implements Serializable, PersonnDAO {
     }
 
     @Override
+    public Personn create(Object o) {
+        return null;
+    }
+
+    @Override
+    public Object read(Serializable id) {
+        return null;
+    }
+
+    @Override
+    public void update(Object o) {
+
+    }
+
+    @Override
+    public void delete(Object o) {
+
+    }
+
+    @Override
     public Personn findByCriterion(Criteria criterion) {
         return null;
     }
