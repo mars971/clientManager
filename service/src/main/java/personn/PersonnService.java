@@ -1,12 +1,13 @@
 package personn;
 
+import Commons.GenericDAO;
 import EPerson.Personn;
 import org.hibernate.Criteria;
-import Exception.ExceptionDAO;
+
 import java.util.Date;
 import java.util.List;
 
-public interface PersonnService {
+public interface PersonnService extends GenericDAO {
 
     Personn findByCriterion(Criteria criterion);
 
@@ -15,10 +16,6 @@ public interface PersonnService {
     List<Personn> findPersonnesByCriterion(Criteria criteria);
 
     List<Personn> findPersonnesByCriteria(Criteria criteria);
-
-    void create(Personn personn) throws ExceptionDAO;
-
-    Personn find() throws ExceptionDAO;
 
     Personn findById(Integer idCustomer);
     List<Personn> findByName(String name);

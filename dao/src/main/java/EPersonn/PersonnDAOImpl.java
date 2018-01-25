@@ -1,7 +1,6 @@
 package EPersonn;
 
 import EPerson.Personn;
-import Exception.ExceptionDAO;
 import factory.FactoryDAO;
 import org.hibernate.Criteria;
 
@@ -17,25 +16,6 @@ public class PersonnDAOImpl implements Serializable, PersonnDAO {
         this.factoryDAO = factoryDAO;
     }
 
-    @Override
-    public Personn create(Object o) {
-        return null;
-    }
-
-    @Override
-    public Object read(Serializable id) {
-        return null;
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
-
-    @Override
-    public void delete(Object o) {
-
-    }
 
     @Override
     public Personn findByCriterion(Criteria criterion) {
@@ -54,16 +34,6 @@ public class PersonnDAOImpl implements Serializable, PersonnDAO {
 
     @Override
     public List<Personn> findPersonnesByCriteria(Criteria criteria) {
-        return null;
-    }
-
-    @Override
-    public void create(Personn personn) throws ExceptionDAO {
-
-    }
-
-    @Override
-    public Personn find() throws ExceptionDAO {
         return null;
     }
 
@@ -110,6 +80,26 @@ public class PersonnDAOImpl implements Serializable, PersonnDAO {
     @Override
     public List<Personn> findByAvatar(String avatar) {
         return null;
+    }
+
+    @Override
+    public boolean create(Object o) {
+        return false;
+    }
+
+    @Override
+    public Object findById(int id) {
+        return null;
+    }
+
+    @Override
+    public boolean update(Object o) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        return false;
     }
 
     @Override

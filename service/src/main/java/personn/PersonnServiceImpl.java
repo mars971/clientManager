@@ -1,9 +1,7 @@
 package personn;
 
-import EAddress.Address;
 import EPerson.Personn;
 import EPersonn.PersonnDAO;
-import Exception.ExceptionDAO;
 import org.hibernate.Criteria;
 
 import java.util.Date;
@@ -27,14 +25,6 @@ public class PersonnServiceImpl implements PersonnService {
 
     public List<Personn> findPersonnesByCriteria(Criteria criteria) {
         return personnDAO.findPersonnesByCriteria(criteria);
-    }
-
-    public void create(Personn personn) throws ExceptionDAO {
-        personnDAO.create(personn);
-    }
-
-    public Personn find() throws ExceptionDAO {
-        return personnDAO.find();
     }
 
     public Personn findById(Integer idCustomer) {
@@ -73,7 +63,27 @@ public class PersonnServiceImpl implements PersonnService {
         return personnDAO.findByAvatar(avatar);
     }
 
+    public boolean create(Object o) {
+        return false;
+    }
+
+    public Object findById(int id) {
+        return null;
+    }
+
+    public boolean update(Object o) {
+        return false;
+    }
+
+    public boolean delete(int id) {
+        return false;
+    }
+
     public List<Personn> findAll() {
         return personnDAO.findAll();
+    }
+
+    public boolean CreatePersonn(Personn personn){
+        return personnDAO.create(personn);
     }
 }

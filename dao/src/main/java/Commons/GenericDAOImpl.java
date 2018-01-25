@@ -1,12 +1,55 @@
 package Commons;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
+
+    private Set<T> objects = new HashSet<T>();
+
+    @Override
+    public boolean create(T t) {
+        if( t != null && !objects.contains(t)){
+            objects.add(t);
+        }
+        return objects.contains(t);
+    }
+
+    @Override
+    public T findById(int id) {
+        if(id >= 0 && id < objects.size() ){
+            return new ArrayList<T>(objects).get(id);
+        }else{
+            return null;
+        }
+    }
+
+    @Override
+    public boolean update(T t) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        boolean result = false;
+        Object object = findById(id);
+
+        if(object != null && objects.contains(object)){
+            objects.remove(object);
+            result = !objects.contains(object);
+        }
+
+        return result;
+    }
+
+    @Override
+    public List<T> findAll() {
+        return new ArrayList<T>(objects);
+    }
+
+/*
     public Class<T> getEntityClass() {
         return entityClass;
     }
@@ -20,7 +63,9 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
     public List<T> findAll() {
         return null;
     }
+*/
 
+/*
     public void setEntityClass(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
@@ -32,11 +77,16 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
+*/
 
-    public Set<T> getObjects() {
-        return objects;
+/*
+    private Set<T> getObjects() {
+        return T;
     }
+*/
 
+
+/*
     public void setObjects(Set<T> objects) {
         this.objects = objects;
     }
@@ -59,19 +109,6 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 
         return objects.contains(t);
     }
+*/
 
-    @Override
-    public T read(int id) {
-        return this.entityManager.find(entityClass, id);
-    }
-
-    @Override
-    public boolean update(T t) {
-        this.entityManager.merge(t);
-    }
-
-    @Override
-    public void delete(T t) {
-        this.entityManager.remove(t);
-    }
 }

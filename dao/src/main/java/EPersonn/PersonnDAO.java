@@ -2,26 +2,12 @@ package EPersonn;
 
 import Commons.GenericDAO;
 import EPerson.Personn;
-import Exception.ExceptionDAO;
 import org.hibernate.Criteria;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 public interface PersonnDAO extends GenericDAO {
-
-    @Override
-    Personn create(Object o);
-
-    @Override
-    Object read(Serializable id);
-
-    @Override
-    void update(Object o);
-
-    @Override
-    void delete(Object o);
 
     Personn findByCriterion(Criteria criterion);
 
@@ -31,9 +17,7 @@ public interface PersonnDAO extends GenericDAO {
 
     List<Personn> findPersonnesByCriteria(Criteria criteria);
 
-    void create(Personn personn) throws ExceptionDAO;
-
-    Personn find() throws ExceptionDAO;
+//    Personn find() throws ExceptionDAO;
 
     Personn findById(Integer idCustomer);
     List<Personn> findByName(String name);
@@ -45,7 +29,5 @@ public interface PersonnDAO extends GenericDAO {
     List<Personn> findByPseudo(String pseudo);
     List<Personn> findByAvatar(String avatar);
 
-
-    List<Personn> findAll();
 
 }
