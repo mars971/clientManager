@@ -2,14 +2,26 @@ package personn;
 
 import EPerson.Personn;
 import EPersonn.PersonnDAO;
+import commons.GenericDAO;
+import commons.GenericServiceImpl;
 import org.hibernate.Criteria;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Date;
 import java.util.List;
 
-public class PersonnServiceImpl implements PersonnService {
+public class PersonnServiceImpl extends GenericServiceImpl<Personn, Integer> implements PersonnService {
+
     private PersonnDAO personnDAO;
 
+    public PersonnServiceImpl(){}
+
+    @Autowired
+    public PersonnServiceImpl(@Qualifier("personnDAOImpl")GenericDAO<Personn, Integer>genericDAO){
+        super(genericDAO);
+        this.personnDAO = (PersonnDAO) genericDAO;
+    }
 
     public Personn findByCriterion(Criteria criterion) {
         return personnDAO.findByCriterion(criterion);
@@ -63,17 +75,11 @@ public class PersonnServiceImpl implements PersonnService {
         return personnDAO.findByAvatar(avatar);
     }
 
-    public boolean create(Object o) {
-        return false;
-    }
 
     public Object findById(int id) {
         return null;
     }
 
-    public boolean update(Object o) {
-        return false;
-    }
 
     public boolean delete(int id) {
         return false;

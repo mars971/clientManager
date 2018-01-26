@@ -9,11 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class PersonnControllerAction extends HttpServlet {
-    PersonnService personnService;
+
+    private PersonnService personnService;
+
 
     public boolean createPersonn(){
         return false;
     }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -1,5 +1,6 @@
 package EPersonn;
 
+import commons.GenericDAOImpl;
 import EPerson.Personn;
 import factory.FactoryDAO;
 import org.hibernate.Criteria;
@@ -8,14 +9,12 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class PersonnDAOImpl implements Serializable, PersonnDAO {
+public class PersonnDAOImpl extends GenericDAOImpl<Personn, Integer> implements Serializable, PersonnDAO {
     private FactoryDAO factoryDAO;
-
 
     public PersonnDAOImpl(FactoryDAO factoryDAO){
         this.factoryDAO = factoryDAO;
     }
-
 
     @Override
     public Personn findByCriterion(Criteria criterion) {
@@ -82,28 +81,4 @@ public class PersonnDAOImpl implements Serializable, PersonnDAO {
         return null;
     }
 
-    @Override
-    public boolean create(Object o) {
-        return false;
-    }
-
-    @Override
-    public Object findById(int id) {
-        return null;
-    }
-
-    @Override
-    public boolean update(Object o) {
-        return false;
-    }
-
-    @Override
-    public boolean delete(int id) {
-        return false;
-    }
-
-    @Override
-    public List<Personn> findAll() {
-        return null;
-    }
 }
