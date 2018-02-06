@@ -3,13 +3,14 @@ package address;
 import EAddress.Address;
 import ECustomer.Customer;
 import EPerson.Personn;
+import common.CRUDService;
 import org.hibernate.Criteria;
 
 import java.util.List;
 
-public interface AddressService {
+public interface AddressService extends CRUDService {
 
-    public Address findByCriterion(Criteria criterion);
+//    public Address findByCriterion(Criteria criterion);
 
     public Address findByCriteria(Criteria criteria);
 
